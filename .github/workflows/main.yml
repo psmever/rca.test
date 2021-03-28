@@ -34,8 +34,8 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - name: Deploy to server
-        run: |
-          echo Deploy to server
-        with:
-          deploy_key: ${{ secrets.ActionDeployKeys }}
+      - name: Deploy to gh-pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_dir: ./build
