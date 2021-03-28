@@ -34,7 +34,10 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - name: curl
-        uses: wei/curl@v1
-        with:
-          args: -X POST http://psmever.iptime.org:9000/hooks/redeploy-app
+      - name: Invoke deployment hook
+        uses: distributhor/workflow-webhook@v1
+        env:
+          webhook_type: 'json-extended'
+          webhook_url: ${{ secrets.WEBHOOK_URL }}
+          webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
+          data: '{ "weapon": "hammer", "drink" : "beer" }'
