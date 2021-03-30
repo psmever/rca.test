@@ -33,7 +33,7 @@ jobs:
       - name: deploy file to server
         uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
-          username: 'root'
+          username: 'sm'
           server: '${{ secrets.STAGE_SERVER_NAME }}'
           ssh_private_key: ${{ secrets.STAGE_SSH_PRIVATE_KEY }}
           PORT: 42022
