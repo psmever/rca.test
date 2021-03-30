@@ -36,7 +36,6 @@ jobs:
           username: 'sm'
           server: '${{ secrets.STAGE_SERVER_NAME }}'
           ssh_private_key: ${{ secrets.STAGE_SSH_PRIVATE_KEY }}
-          PORT: 42022
           local_path: './build/*'
           remote_path: '/var/www/site/blog/front'
           args: '-o ConnectTimeout=5'
